@@ -1,0 +1,65 @@
++-------------------------------------------+
+    Available Subscriptions
++-------------------------------------------+
+Subscription Name:   Red Hat Virtualization Manager for Power
+Provides:            Red Hat Enterprise Linux Fast Datapath (for RHEL Server for IBM Power LE)
+                     Red Hat Enterprise Linux Fast Datapath Beta for Power, little endian
+                     Red Hat Virtualization Manager
+                     Red Hat OpenShift Container Platform
+                     Red Hat JBoss Core Services
+                     JBoss Enterprise Application Platform
+SKU:                 RV00099
+Contract:            
+Pool ID:             8a85f99b6c5350c8016c5fa92ba144d5
+Provides Management: No
+Available:           10
+Suggested:           1
+Service Level:       Layered
+Service Type:        L1-L3
+Subscription Type:   Stackable
+Ends:                10/03/2019
+System Type:         Physical
+
+Subscription Name:   60 Day Supported Red Hat Virtualization (2-socket) Evaluation
+Provides:            Red Hat Virtualization
+                     Red Hat Enterprise Linux Fast Datapath Beta for x86_64
+                     Red Hat Virtualization Manager
+                     Red Hat Enterprise Linux Fast Datapath
+                     Red Hat JBoss Core Services
+                     Red Hat Virtualization Host
+                     Red Hat Virtualization for IBM Power LE
+                     JBoss Enterprise Application Platform
+SKU:                 RV0289446
+Contract:            11979871
+Pool ID:             8a85f99b6c5350c8016c5fa6ad8f44aa
+Provides Management: No
+Available:           1
+Suggested:           1
+Service Level:       Premium
+Service Type:        L1-L3
+Subscription Type:   Stackable
+Ends:                10/03/2019
+System Type:         Physical
+
+Subscription Name:   Red Hat Virtualization Manager
+Provides:            Red Hat Beta
+                     Red Hat Enterprise Linux Server
+                     Red Hat CodeReady Linux Builder for x86_64
+                     Red Hat Enterprise Linux for x86_64
+                     Red Hat Virtualization Manager
+                     Red Hat OpenShift Container Platform
+                     Red Hat Ansible Engine
+                     Red Hat Enterprise Linux Fast Datapath
+                     Red Hat JBoss Core Services
+                     JBoss Enterprise Application Platform
+SKU:                 RV00045
+Contract:            
+Pool ID:             8a85f99b6c5350c8016c5fa929fe44d0
+Provides Management: No
+Available:           10
+Suggested:           1
+Service Level:       Layered
+Service Type:        L1-L3
+Subscription Type:   Stackable
+Ends:                10/03/2019
+System Type:         Physical
