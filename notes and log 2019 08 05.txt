@@ -1,0 +1,60 @@
+Notes on MOSIP Installation 2019 08 05
+
+Docker URL for Docker EE RHEL - https://storebits.docker.com/ee/rhel/sub-d9ab1129-a608-4f09-91b3-c57a939cbd1c
+
+Installed docker-ee-19.03.1 with version number 19.03.1
+For config, do $sudo yum-config-manager --enable docker-ee-stable-19.03.1
+
+
+Skipped Items
+
+1st item
+===
+During installation of Docker from Jenkins setup
+From https://docs.docker.com/install/linux/docker-ee/rhel/#find-your-docker-ee-repo-url
+
+FIPS 140-2 cryptographic module support
+
+Federal Information Processing Standards (FIPS) Publication 140-2 is a United States Federal security requirement for cryptographic modules.
+
+With Docker EE Basic license for versions 18.03 and later, Docker provides FIPS 140-2 support in RHEL 7.3, 7.4 and 7.5. This includes a FIPS supported cryptographic module. If the RHEL implementation already has FIPS support enabled, FIPS is automatically enabled in the Docker engine.
+
+To verify the FIPS-140-2 module is enabled in the Linux kernel, confirm the file /proc/sys/crypto/fips_enabled contains 1.
+
+$ cat /proc/sys/crypto/fips_enabled
+1
+===
+
+
+2nd Item errors on $ sudo yum install -y yum-utils \
+  device-mapper-persistent-data \
+  lvm2
+During Docker installation setting up respository from https://docs.docker.com/install/linux/docker-ee/rhel/#find-your-docker-ee-repo-url 
+===
+Total download size: 3.7 M
+Downloading packages:
+No Presto metadata available for rhel-7-server-rpms
+warning: /var/cache/yum/x86_64/7Server/rhel-7-server-rpms/packages/device-mapper-event-1.02.149-10.el7_6.8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID fd431d51: NOKEY
+Public key for device-mapper-event-1.02.149-10.el7_6.8.x86_64.rpm is not installed
+(1/8): device-mapper-event-1.02.149-10.el7_6.8.x86_64.rpm                                                    | 189 kB  00:00:10     
+(2/8): device-mapper-event-libs-1.02.149-10.el7_6.8.x86_64.rpm                                               | 188 kB  00:00:00     
+(3/8): device-mapper-libs-1.02.149-10.el7_6.8.x86_64.rpm                                                     | 321 kB  00:00:00     
+(4/8): lvm2-2.02.180-10.el7_6.8.x86_64.rpm                                                                   | 1.3 MB  00:00:00     
+(5/8): lvm2-libs-2.02.180-10.el7_6.8.x86_64.rpm                                                              | 1.1 MB  00:00:00     
+(6/8): lvm2-python-libs-2.02.180-10.el7_6.8.x86_64.rpm                                                       | 186 kB  00:00:00     
+(7/8): yum-utils-1.1.31-50.el7.noarch.rpm                                                                    | 121 kB  00:00:00     
+device-mapper-1.02.149-10.el7_ FAILED                                          
+https://cdn.redhat.com/content/dist/rhel/server/7/7Server/x86_64/os/Packages/d/device-mapper-1.02.149-10.el7_6.8.x86_64.rpm: [Errno 14] curl#6 - "Could not resolve host: cdn.redhat.com; Unknown error"
+Trying other mirror.
+
+
+Error downloading packages:
+  7:device-mapper-1.02.149-10.el7_6.8.x86_64: [Errno 256] No more mirrors to try.
+===
+
+3rd item
+===
+Error downloading packages:
+  containerd.io-1.2.6-3.3.el7.x86_64: [Errno 256] No more mirrors to try.
+  3:docker-ee-19.03.1-3.el7.x86_64: [Errno 256] No more mirrors to try.
+===
